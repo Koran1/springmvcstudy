@@ -1,0 +1,82 @@
+package com.ict.edu01.bbs.dao;
+
+import java.util.List;
+
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.ict.edu01.bbs.vo.BBSVO;
+import com.ict.edu01.bbs.vo.CommentVO;
+
+@Repository
+public class BBSDAOImpl implements BBSDAO{
+
+	@Autowired
+	private SqlSessionTemplate sqlSessionTemplate;
+	
+	
+	@Override
+	public List<BBSVO> getBBSList() {
+		return sqlSessionTemplate.selectList("bbs.list");
+	}
+
+	@Override
+	public int getBBSInsert(BBSVO bvo) {
+		return sqlSessionTemplate.insert("bbs.insert", bvo);
+	}
+
+	@Override
+	public BBSVO getBBSDetail(String b_idx) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int getBBSDelete(String b_idx) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int getBBSUpdate(BBSVO bvo) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int getHitUpdate(String b_idx) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int getTotalCount() {
+		return sqlSessionTemplate.selectOne("bbs.count");
+	}
+
+	@Override
+	public List<BBSVO> getBBSList(int offset, int limit) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<CommentVO> getCommentList(String b_idx) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int getCommentInsert(CommentVO cvo) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int getCommentDelete(String c_idx) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

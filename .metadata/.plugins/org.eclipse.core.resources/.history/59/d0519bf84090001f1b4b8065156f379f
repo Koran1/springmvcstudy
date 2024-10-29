@@ -1,0 +1,15 @@
+package com.ict.edu01.guestbook.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.ict.edu01.guestbook.dao.GuestbookDAO;
+
+@Service
+public class GuestbookServiceImpl {
+	
+	@Autowired
+	private GuestbookDAO guestbookDAO;
+	
+	
+}

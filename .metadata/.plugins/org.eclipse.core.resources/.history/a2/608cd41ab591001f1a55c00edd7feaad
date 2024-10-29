@@ -1,0 +1,5 @@
+package com.ict.edu01.sns.vo;
+
+public class KakaoVO {
+	private String access_token, token_type, refresh_token, id_token, expires_in, scope, refresh_token_expires_in;
+}

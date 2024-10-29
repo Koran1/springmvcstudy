@@ -1,0 +1,21 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Index</title>
+</head>
+<body>
+	<h2>Index Page of spring_mvc02 입니다</h2>
+	<h3><a href="">Login</a></h3>
+	<h3><a href="">Guestbook2</a></h3>
+	<h3><a href="">게시판 : bbs</a></h3>
+	<h3><a href="">게시판 : board</a></h3>
+	<h3><a href="">shopping</a></h3>
+	<h3><a href="">주소록</a></h3>
+	<h3><a href="">지도</a></h3>
+	
+	
+</body>
+</html>

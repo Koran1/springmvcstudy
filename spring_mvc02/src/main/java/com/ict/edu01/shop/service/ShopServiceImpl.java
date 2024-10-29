@@ -1,0 +1,63 @@
+package com.ict.edu01.shop.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.ict.edu01.shop.dao.ShopDAO;
+import com.ict.edu01.shop.vo.CartVO;
+import com.ict.edu01.shop.vo.ShopVO;
+
+@Service
+public class ShopServiceImpl implements ShopService{
+
+	@Autowired
+	private ShopDAO shopDAO;
+	
+	@Override
+	public List<ShopVO> getShopList(String category) throws Exception {
+		return shopDAO.getShopList(category);
+	}
+
+	@Override
+	public ShopVO getShopDetail(String shop_idx) throws Exception {
+		return shopDAO.getShopDetail(shop_idx);
+	}
+
+	@Override
+	public List<CartVO> getCartList(String m_id) throws Exception {
+		return null;
+	}
+
+	@Override
+	public CartVO getCartChk(String m_id, String p_num) {
+		return null;
+	}
+
+	@Override
+	public int getCartInsert(CartVO cartVO) throws Exception {
+		return 0;
+	}
+
+	@Override
+	public int getCartUpdate(CartVO cartVO) throws Exception {
+		return 0;
+	}
+
+	@Override
+	public int getCartEdit(CartVO cavo) throws Exception {
+		return 0;
+	}
+
+	@Override
+	public int getCartDelete(String cart_idx) throws Exception {
+		return 0;
+	}
+
+	@Override
+	public int getProductInsert(ShopVO svo) throws Exception {
+		return 0;
+	}
+
+}

@@ -1,0 +1,90 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>BBS - detail</title>
+<link rel="stylesheet" href="resources/css/summernote-lite.css">
+<style type="text/css">
+	#bbs table {
+	    width:800px;
+	    margin:0 auto;
+	    margin-top:20px;
+	    border:1px solid black;
+	    border-collapse:collapse;
+	    font-size:14px;
+	    
+	}
+	
+	#bbs table caption {
+	    font-size:20px;
+	    font-weight:bold;
+	    margin-bottom:10px;
+	}
+	
+	#bbs table th {
+		width: 12%;
+	    text-align:center;
+	    border:1px solid black;
+	    padding:4px 10px;
+	}
+	
+	#bbs table td {
+	    text-align:left;
+	    border:1px solid black;
+	    padding:4px 10px;
+	}
+</style>
+
+</head>
+<body>
+	<div id="bbs">
+		<form action="">
+		<table summary="게시판 상세보기">
+			<caption>게시판 상세보기</caption>
+			<tbody>
+				<tr>
+					<th>제목:</th>
+					<td></td>
+				</tr>
+				<tr>
+					<th>이름:</th>
+					<td></td>
+				</tr>
+				<tr>
+					<th>내용:</th>
+					<td><pre id="content"></pre></td>
+				</tr>
+				<tr>
+					<th>첨부파일:</th>
+					<td></td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<input type="button" value="수정" onclick="bbs_update()">
+						<input type="button" value="삭제" onclick="bbs_delete()">
+						<input type="button" value="목록" onclick="bbs_list()">
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		</form>
+	</div>
+	
+	<script type="text/javascript">
+		function bbs_update()() {
+			
+		}
+		function bbs_delete()() {
+			
+		}
+		function bbs_list(){
+			location.href="/bbs";
+		}
+	</script>
+	
+	
+</body>
+</html>
+

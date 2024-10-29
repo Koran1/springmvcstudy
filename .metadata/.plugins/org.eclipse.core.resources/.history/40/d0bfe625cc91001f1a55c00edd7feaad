@@ -1,0 +1,20 @@
+package com.ict.edu01.sns.vo;
+
+public class KakaoUserResponse {
+	private long Id;
+	private Properties properties;
+	private KakaoAccount kakao_acount;
+	
+	public static class Properties{
+		private String nickname, profile_image, thumbnail_image;
+		
+	}
+	
+	public static class KakaoAccount{
+		private Profile profile;
+		
+		public static class Profile{
+			private String nickname, thumbnail_image_url, profile_image_urll
+		}
+	}
+}

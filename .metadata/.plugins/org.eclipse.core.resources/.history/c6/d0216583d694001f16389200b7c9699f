@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="bbs">
+	<select id="list" resultType="bvo">
+		select * from bbs_t order by b_idx desc where active = 0
+	</select>
+	<insert id="insert" parameterType="bvo">
+		insert into bbs_t (subject, writer, content, f_name, pwd, write_date, hit)
+		values (#{subject}, #{writer}, #{content}, #{f_name}, #{pwd}, now(), 0)
+	</insert>
+	<select id="count" resultType="int">
+		select count(*) from bbs_t where active = 0
+	</select>
+	<select id="pagelist" parameterType="Map" resultType="bvo">
+		SELECT * FROM bbs_t order by b_idx desc limit #{limit} offset #{offset};
+	</select>
+	<select id="detail" parameterType="String" resultType="bvo">
+		select * from bbs_t where b_idx = #{b_idx}
+	</select>
+	<update id="hitup" parameterType="String">
+		update bbs_t set hit = hit + 1 where b_idx = #{b_idx}
+	</update>
+	<update id="delete" parameterType="String">
+		update bbs_t set active = 1 where b_idx = #{b_idx}
+	</update>
+</mapper>

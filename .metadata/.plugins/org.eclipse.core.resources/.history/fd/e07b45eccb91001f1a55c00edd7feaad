@@ -1,0 +1,11 @@
+package com.ict.edu01.sns.vo;
+
+public class KakaoUserResponse {
+	private long Id;
+	private Properties properties;
+	private KakaoAccount kakao_acount;
+	
+	public static class Properties{
+		
+	}
+}

@@ -1,0 +1,43 @@
+package com.ict.edu01.guestbook.dao;
+
+import java.util.List;
+
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.ict.edu01.guestbook.vo.GuestbookVO;
+
+@Repository
+public class GuestbookDAOImpl implements GuestbookDAO{
+	
+	@Autowired
+	private SqlSessionTemplate sqlSessionTemplate;
+
+	@Override
+	public List<GuestbookVO> getGuestbookList() {
+		return null;
+	}
+
+	@Override
+	public int insertGuestbook(GuestbookVO gbvo) {
+		return 0;
+	}
+
+	@Override
+	public GuestbookVO getGuestbookOneList(String gb2_idx) {
+		return null;
+	}
+
+	@Override
+	public int updateGuestbook(GuestbookVO gbvo) {
+		return 0;
+	}
+
+	@Override
+	public int deleteGuestbook(String gb2_idx) {
+		return 0;
+	}
+	
+	
+}

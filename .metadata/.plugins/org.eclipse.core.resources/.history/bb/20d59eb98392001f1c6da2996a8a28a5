@@ -1,0 +1,39 @@
+package com.ict.edu01.sns.vo;
+
+public class DaumAddrVO {
+	private String m_id, postcode, address, detailAdrress, extraAddress;
+	
+	public String getPostcode() {
+		return postcode;
+	}
+
+	public void setPostcode(String postcode) {
+		this.postcode = postcode;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getDetailAdrress() {
+		return detailAdrress;
+	}
+
+	public void setDetailAdrress(String detailAdrress) {
+		this.detailAdrress = detailAdrress;
+	}
+
+	public String getExtraAddress() {
+		return extraAddress;
+	}
+
+	public void setExtraAddress(String extraAddress) {
+		this.extraAddress = extraAddress;
+	}
+	
+	
+}

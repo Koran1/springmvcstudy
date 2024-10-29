@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="guestbook2">
+	<!-- 사용할 기능 -->
+		<select id="gb2_list" resultType="com.ict.guestbook2.db.GB2_VO">
+			select * from guestbook2 order by gb2_idx desc
+		</select>
+		
+		<insert id="gb2_insert" parameterType="com.ict.guestbook2.db.GB2_VO">
+		insert into guestbook2 (gb2_name, gb2_subject, gb2_content, 
+		gb2_email, gb2_pw, gb2_f_name, gb2_regdate) 
+		values (
+			#{gb2_name},
+			#{gb2_subject},
+			#{gb2_content},
+			#{gb2_email},
+			#{gb2_pw},
+			#{gb2_f_name},
+			DATE(NOW())
+		)
+		</insert>
+		
+		<select id="gb2_list_one" resultType="com.ict.guestbook2.db.GB2_VO" parameterType="String">
+			select * from guestbook2 where gb2_idx = #{gb2_idx};
+		</select>
+		
+		<update id="gb2_update" parameterType="com.ict.guestbook2.db.GB2_VO">
+			update guestbook2 set gb2_name=#{gb2_name}, gb2_subject=#{gb2_subject}, 
+			gb2_content=#{gb2_content}, gb2_email=#{gb2_email}, 
+			gb2_f_name=#{gb2_f_name} ,gb2_regdate = DATE(now())
+			where gb2_idx = #{gb2_idx}
+		</update>
+		
+		<delete id="gb2_delete" parameterType="com.ict.guestbook2.db.GB2_VO">
+			delete from guestbook2 where gb2_idx = #{gb2_idx} and gb2_pw = #{gb2_pw}
+		</delete>
+		
+</mapper>
