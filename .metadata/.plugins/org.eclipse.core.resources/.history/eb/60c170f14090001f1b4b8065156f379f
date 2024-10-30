@@ -1,9 +1,0 @@
-package com.ict.edu01.guestbook.dao;
-
-import java.util.List;
-
-import com.ict.edu01.guestbook.vo.GuestbookVO;
-
-public interface GuestbookDAO {
-	public List<GuestbookVO> getGuestbookList();
-}

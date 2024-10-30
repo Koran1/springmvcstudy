@@ -1,6 +1,0 @@
-package com.ict.edu01.guestbook.vo;
-
-public class GuestbookVO {
-	private String gb2_idx, gb2_name, gb2_subject, gb2_content, gb2_email, gb2_pw, gb2_f_name, gb2_regdate;
-	
-}
