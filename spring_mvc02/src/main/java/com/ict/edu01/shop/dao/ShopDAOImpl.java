@@ -52,17 +52,17 @@ public class ShopDAOImpl implements ShopDAO {
 
 	@Override
 	public int getCartEdit(CartVO cavo) throws Exception {
-		return 0;
+		return sqlSessionTemplate.update("shop.cartedit", cavo);
 	}
 
 	@Override
 	public int getCartDelete(String cart_idx) throws Exception {
-		return 0;
+		return sqlSessionTemplate.delete("shop.cartdelete", cart_idx);
 	}
 
 	@Override
 	public int getProductInsert(ShopVO svo) throws Exception {
-		return 0;
+		return sqlSessionTemplate.insert("shop.productinsert", svo);
 	}
 
 }

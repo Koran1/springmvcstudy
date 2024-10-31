@@ -26,6 +26,7 @@ import com.ict.edu01.sns.vo.NaverUserResponse;
 import com.ict.edu01.sns.vo.NaverVO;
 import com.ict.edu01.sns.vo.RoadVO;
 import com.ict.edu01.sns.vo.RouteInfoVO;
+import com.ict.edu01.sns.vo.RouteInfoVO2;
 import com.ict.edu01.sns.vo.RouteVO;
 import com.ict.edu01.sns.vo.SectionVO;
 
@@ -175,9 +176,7 @@ public class SNSAjaxController {
 	}
 
 	@RequestMapping(value = "/kakaoRoadLine", produces = "application/json; charset=utf-8")
-	public List<RouteInfoVO> kakaoRoad(@RequestParam("positions[]") double[] positions, HttpServletRequest request) {
-		// public RouteInfoVO kakaoRoad(@RequestParam("positions[]") double[] positions,
-		// HttpServletRequest request) {
+	public List<RouteInfoVO2> kakaoRoad(@RequestParam("positions[]") double[] positions, HttpServletRequest request) {
 		try {
 			List<String> coordinates_string = new ArrayList<>();
 
@@ -208,7 +207,7 @@ public class SNSAjaxController {
 				coordinates_string_final.add(coordinates_string.get(1));
 			}
 
-			List<RouteInfoVO> list = new ArrayList<RouteInfoVO>();
+			List<RouteInfoVO2> list = new ArrayList<RouteInfoVO2>();
 			for (int i = 0; i < coordinates_string_final.size() - 1; i++) {
 				String origin2 = coordinates_string_final.get(i);
 				String destination = coordinates_string_final.get(i + 1);
@@ -216,45 +215,7 @@ public class SNSAjaxController {
 			}
 			return list;
 
-			/*
-			 * String mark1 = coordinates_string_final.get(0); String mark2 =
-			 * coordinates_string_final.get(coordinates_string_final.size() - 1); String
-			 * urlString = "https://apis-navi.kakaomobility.com/v1/directions?origin=" +
-			 * mark1 + "&destination=" + mark2;
-			 * 
-			 * if(coordinates_string_final.size() > 2) { String waypoints =
-			 * "&waypoints="+coordinates_string_final.get(1); for (int i = 2; i <
-			 * coordinates_string_final.size()-2; i++) { waypoints = waypoints +" | "+
-			 * coordinates_string_final.get(i); } }
-			 * 
-			 * URL url = new URL(urlString); HttpURLConnection conn = (HttpURLConnection)
-			 * url.openConnection();
-			 * 
-			 * conn.setRequestMethod("GET"); conn.setDoOutput(true);
-			 * 
-			 * conn.setRequestProperty("Authorization",
-			 * "KakaoAK 1a31dbd4bb00984c5b2d38a62c3d2f0f");
-			 * conn.setRequestProperty("Content-type", "application/json");
-			 * 
-			 * int responseCode = conn.getResponseCode();
-			 * System.out.println("responseCode(GetRouteInfo) : " + responseCode);
-			 * 
-			 * if (responseCode == HttpURLConnection.HTTP_OK) { BufferedReader br = new
-			 * BufferedReader(new InputStreamReader(conn.getInputStream())); String line =
-			 * ""; StringBuffer sb2 = new StringBuffer(); while ((line = br.readLine()) !=
-			 * null) { sb2.append(line); } String result = sb2.toString();
-			 * 
-			 * Gson gson = new Gson(); RouteInfoVO routeInfo = gson.fromJson(result,
-			 * RouteInfoVO.class);
-			 * 
-			 * return routeInfo;
-			 * 
-			 * } else { // 오류 메세지 출력 BufferedReader br = new BufferedReader(new
-			 * InputStreamReader(conn.getErrorStream())); String line = ""; StringBuffer
-			 * sbError = new StringBuffer(); while ((line = br.readLine()) != null) {
-			 * sbError.append(line); } System.out.println("Error response: " +
-			 * sbError.toString()); return null; }
-			 */
+			
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -291,7 +252,7 @@ public class SNSAjaxController {
 				String result = sb2.toString();
 
 				Gson gson = new Gson();
-				RouteInfoVO routeInfo = gson.fromJson(result, RouteInfoVO.class);
+				RouteInfoVO2 routeInfo = gson.fromJson(result, RouteInfoVO2.class);
 				return routeInfo.getRoutes().get(0).getSections().get(0).getDistance();
 
 			} else {
@@ -310,7 +271,7 @@ public class SNSAjaxController {
 		return 0;
 	}
 
-	public RouteInfoVO getRouteInfo(String mark1, String mark2) {
+	public RouteInfoVO2 getRouteInfo(String mark1, String mark2) {
 		try {
 			String urlString = "https://apis-navi.kakaomobility.com/v1/directions?origin=" + mark1 + "&destination="
 					+ mark2;
@@ -337,7 +298,7 @@ public class SNSAjaxController {
 				String result = sb2.toString();
 
 				Gson gson = new Gson();
-				RouteInfoVO routeInfo = gson.fromJson(result, RouteInfoVO.class);
+				RouteInfoVO2 routeInfo = gson.fromJson(result, RouteInfoVO2.class);
 
 				return routeInfo;
 

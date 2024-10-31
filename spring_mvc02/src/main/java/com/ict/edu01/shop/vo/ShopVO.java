@@ -1,14 +1,33 @@
 package com.ict.edu01.shop.vo;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class ShopVO {
-	private String shop_idx, category, p_num, p_name, p_company, p_image_s, p_image_l,p_content, p_date;
+	private MultipartFile p_image_s_file, p_image_l_file;
+	private String shop_idx, category, p_num, p_name, p_company, p_image_s, p_image_l, p_content, p_date;
 	private int p_price, p_saleprice;
-	
+
 	// 할인률 계산
 	public int getPercent() {
-		return (int)((p_price - p_saleprice) * 100.0 / p_price) ;
+		return (int) ((p_price - p_saleprice) * 100.0 / p_price);
 	}
-	
+
+	public MultipartFile getP_image_s_file() {
+		return p_image_s_file;
+	}
+
+	public void setP_image_s_file(MultipartFile p_image_s_file) {
+		this.p_image_s_file = p_image_s_file;
+	}
+
+	public MultipartFile getP_image_l_file() {
+		return p_image_l_file;
+	}
+
+	public void setP_image_l_file(MultipartFile p_image_l_file) {
+		this.p_image_l_file = p_image_l_file;
+	}
+
 	public String getShop_idx() {
 		return shop_idx;
 	}
@@ -96,5 +115,5 @@ public class ShopVO {
 	public void setP_date(String p_date) {
 		this.p_date = p_date;
 	}
-	
+
 }

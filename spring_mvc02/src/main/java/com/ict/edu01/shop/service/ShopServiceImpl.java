@@ -47,17 +47,17 @@ public class ShopServiceImpl implements ShopService{
 
 	@Override
 	public int getCartEdit(CartVO cavo) throws Exception {
-		return 0;
+		return shopDAO.getCartEdit(cavo);
 	}
 
 	@Override
 	public int getCartDelete(String cart_idx) throws Exception {
-		return 0;
+		return shopDAO.getCartDelete(cart_idx);
 	}
 
 	@Override
 	public int getProductInsert(ShopVO svo) throws Exception {
-		return 0;
+		return shopDAO.getProductInsert(svo);
 	}
 
 }

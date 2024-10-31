@@ -25,4 +25,14 @@
 	<select id="cartlist" parameterType="String" resultType="cartvo">
 		select * from cart where m_id = #{m_id} 
 	</select>
+	<update id="cartedit" parameterType="cartvo">
+		update cart set p_su = #{p_su} where cart_idx = #{cart_idx}
+	</update>
+	<delete id="cartdelete" parameterType="String">
+		delete from cart where cart_idx = #{cart_idx}
+	</delete>
+	<insert id="productinsert" parameterType="shopvo">
+		insert into shop_t (category, p_num, p_name, p_company, p_price, p_saleprice, p_image_s, p_image_l, p_content, p_date)
+		values (#{category}, #{p_num}, #{p_name}, #{p_company}, #{p_price}, #{p_saleprice}, #{p_image_s}, #{p_image_l}, #{p_content}, now())
+	</insert>
 </mapper>

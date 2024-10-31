@@ -7,7 +7,7 @@ public class RoadVO {
 	private int distance;
 	private int duration;
 	private double[] vertexes;
-	private List<CoordinateVO> coordinates; // List of coordinate pairs
+	private List<CoordinateVO> coordinates;
 
 	public String getName() {
 		return name;

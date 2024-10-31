@@ -47,12 +47,13 @@
 		  		<c:when test="${logchk == 'ok'}">
 		  			${mvo.m_name} 님 환영합니다
 		  			<c:if test="${admin == 'ok' }">
-		  				<a href="/shop_add_form">상품등록</a>
+		  				<a href="/shop/add_form">상품등록</a>
 		  			</c:if>
 		  			<c:if test="${admin != 'ok' }">
 		  				<a href="/shop/showCart">장바구니</a>
 		  			</c:if>
 		  			
+		  			<a href="/member_logout">로그아웃</a>
 		  		</c:when>
 		  		<c:otherwise>
 		  			<a href="/sns_login">로그인</a>

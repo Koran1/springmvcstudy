@@ -5,6 +5,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -55,5 +56,20 @@ public class MemberController {
 		
 		return mv;
 	}
+	
+	@GetMapping("/member_logout")
+	public ModelAndView memberLogout(HttpSession session) {
+		// 1. 세션 초기화 (전체 삭제)
+		session.invalidate();
+		
+		// 2. 세션 필요정보만 삭제
+		/*
+		 * session.removeAttribute("logchk"); session.removeAttribute("mvo");
+		 * session.removeAttribute("admin");
+		 */
+		
+		return new ModelAndView("redirect:/shop/list");
+	}
+	
 	
 }

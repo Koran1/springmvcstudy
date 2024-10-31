@@ -39,24 +39,25 @@ img{
 			</tr>
 		</thead>
 		<tbody>
-			<tr align="center">
 				<c:choose>
 					<c:when test="${empty shop_list}">
+					<tr align="center">
 						<td colspan="5">제품 준비중</td>
+					</tr>
 					</c:when>
 					<c:otherwise>
 						<c:forEach var="k" items="${shop_list}">
-							<td>${k.shop_idx}</td>
-							<td><img src="/resources/images/${k.p_image_s}" height="95"></td>
-							<td><a href="/shop/detail?shop_idx=${k.shop_idx}">${k.p_name}</a></td>
-							<td>할인가 : <fmt:formatNumber value="${k.p_saleprice}" pattern="#,##0" />원 <br>
-							<font color="red">(할인률 : ${k.getPercent()}%)</font></td>
-							<td>시중가 : <fmt:formatNumber value="${k.p_price}" pattern="#,##0"/>원</td>
-						
+							<tr align="center">
+								<td>${k.shop_idx}</td>
+								<td><img src="/resources/images/${k.p_image_s}" height="95"></td>
+								<td><a href="/shop/detail?shop_idx=${k.shop_idx}">${k.p_name}</a></td>
+								<td>할인가 : <fmt:formatNumber value="${k.p_saleprice}" pattern="#,##0" />원 <br>
+								<font color="red">(할인률 : ${k.getPercent()}%)</font></td>
+								<td>시중가 : <fmt:formatNumber value="${k.p_price}" pattern="#,##0"/>원</td>
+							</tr>
 						</c:forEach>
 					</c:otherwise>
 				</c:choose>
-			</tr>
 		</tbody>
 
 	</table>

@@ -11,11 +11,8 @@
 <body>
 	<h1>Map</h1>
 	<button onclick="getRoadLine()">경로 그리기</button>
-	<!-- <a href="/kakaoroad">경로 추가하기</a> -->
 
 	<div id="map" style="width: 100%; height: 350px;"></div>
-
-
 
 	<script type="text/javascript"
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3ab528374e287b067bf7ce3808786127"></script>
@@ -67,13 +64,7 @@
 							});
 						});
 					})
-					/* data.routes[0].sections[0].roads.forEach(item => {
-							  item.vertexes.forEach((vertex, index) => {
-								if (index % 2 === 0) {
-									linePath.push(new kakao.maps.LatLng(item.vertexes[index + 1], item.vertexes[index]));
-								}
-							});
-						}); */
+
 					  
 					var polyline = new kakao.maps.Polyline({
 					  path: linePath,
