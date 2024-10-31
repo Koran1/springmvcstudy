@@ -17,6 +17,7 @@
 		<typeAlias type="com.ict.edu01.bbs.vo.CommentVO" alias="cvo" />
 		<typeAlias type="com.ict.edu01.shop.vo.ShopVO" alias="shopvo" />
 		<typeAlias type="com.ict.edu01.shop.vo.CartVO" alias="cartvo" />
+		<typeAlias type="com.ict.edu01.member.vo.MemberVO" alias="memvo" />
 		
 	</typeAliases>
 	<mappers>

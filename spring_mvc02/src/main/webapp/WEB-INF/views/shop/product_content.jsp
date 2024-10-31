@@ -65,5 +65,16 @@ table, th, td {
 			</td>
 		</tr>
 	</table>
+	
+	<script type="text/javascript">
+		function add_cart() {
+			// 해당 상품의 pk 를 가지고 와야 한다
+			const shop_idx = "${shopvo.shop_idx}";
+			location.href = '/shop/addCart?shop_idx='+shop_idx;
+		}
+		function show_cart() {
+			location.href = '/shop/showCart';
+		}
+	</script>
 </body>
 </html>

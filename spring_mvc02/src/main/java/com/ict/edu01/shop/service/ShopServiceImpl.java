@@ -27,22 +27,22 @@ public class ShopServiceImpl implements ShopService{
 
 	@Override
 	public List<CartVO> getCartList(String m_id) throws Exception {
-		return null;
+		return shopDAO.getCartList(m_id);
 	}
 
 	@Override
 	public CartVO getCartChk(String m_id, String p_num) {
-		return null;
+		return shopDAO.getCartChk(m_id, p_num);
 	}
 
 	@Override
 	public int getCartInsert(CartVO cartVO) throws Exception {
-		return 0;
+		return shopDAO.getCartInsert(cartVO);
 	}
 
 	@Override
 	public int getCartUpdate(CartVO cartVO) throws Exception {
-		return 0;
+		return shopDAO.getCartUpdate(cartVO);
 	}
 
 	@Override

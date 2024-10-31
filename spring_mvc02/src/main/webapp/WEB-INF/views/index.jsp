@@ -12,6 +12,7 @@
 	<h3><a href="/guestbook2">Guestbook2</a></h3>
 	<h3><a href="/bbs">게시판 : bbs</a></h3>
 	<h3><a href="/board">게시판 : board</a></h3>
+	<h3><a href="/findroad">road test</a></h3>
 	
 	<button onclick="shop_go()"><h3>shopping</h3></button>
 	<button onclick="addr_go()"><h3>주소록</h3></button>

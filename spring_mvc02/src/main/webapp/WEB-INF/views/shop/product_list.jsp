@@ -48,7 +48,7 @@ img{
 						<c:forEach var="k" items="${shop_list}">
 							<td>${k.shop_idx}</td>
 							<td><img src="/resources/images/${k.p_image_s}" height="95"></td>
-							<td><a href="/shop/detail?prod_num=${k.shop_idx}">${k.p_name}</a></td>
+							<td><a href="/shop/detail?shop_idx=${k.shop_idx}">${k.p_name}</a></td>
 							<td>할인가 : <fmt:formatNumber value="${k.p_saleprice}" pattern="#,##0" />원 <br>
 							<font color="red">(할인률 : ${k.getPercent()}%)</font></td>
 							<td>시중가 : <fmt:formatNumber value="${k.p_price}" pattern="#,##0"/>원</td>

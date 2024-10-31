@@ -24,6 +24,9 @@
 			text-align: center;
 		}
 		div#wrap{ margin: 0 auto; }
+		div#login{
+			display: inline;
+		}
     </style>
   </head>
   <body>
@@ -47,7 +50,7 @@
 		  				<a href="/shop_add_form">상품등록</a>
 		  			</c:if>
 		  			<c:if test="${admin != 'ok' }">
-		  				<a href="/shop_showCart">장바구니</a>
+		  				<a href="/shop/showCart">장바구니</a>
 		  			</c:if>
 		  			
 		  		</c:when>

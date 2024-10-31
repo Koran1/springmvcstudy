@@ -32,17 +32,22 @@
 		<beans:property name="defaultEncoding" value="UTF-8" />
 	</beans:bean>
 	
-	<!-- <interceptors>
+	<interceptors>
 		<interceptor>
+			<!-- 모든 경로에 인터셉터 적용 -->
 			<mapping path="/**"/>
-			<exclude-mapping path="/sns_login"/>
-			<exclude-mapping path="/guestbook2"/>
-			모든 경로에 인터셉터 적용
-			public 폴더, admin 폴더 처럼 폴더로 구분해서 filter 적용
+			
+			<!-- 모든 경우가 예외 -->
+			<exclude-mapping path="/**"/>
+			
+			<!-- public 폴더, admin 폴더 처럼 폴더로 구분해서 filter 적용 -->
+			<!-- <exclude-mapping path="/sns_login"/>
+			<exclude-mapping path="/guestbook2"/> -->
+			
 			<exclude-mapping path="/public/**"/>
 			<beans:bean id="loginInterceptor" class="com.ict.edu01.common.LoginInterceptor" />
 		</interceptor>
-	</interceptors> -->
+	</interceptors>
 	
 	
 		

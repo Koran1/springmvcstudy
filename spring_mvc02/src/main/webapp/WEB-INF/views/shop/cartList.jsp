@@ -1,16 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Cart List</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <style type="text/css">
 table {
 	margin: 10px auto;
-	width: 600;
+	width: 800px;
 	border-collapse: collapse;
-	font-size: 8pt;
+	font-size: 12px;
 	border-color: navy;
 }
 
@@ -20,6 +22,7 @@ table, th, td {
 </style>
 </head>
 <body>
+	<jsp:include page="top.jsp" />
 	<table>
 		<tr>
 			<td colspan="6">:: 장바구니 내용</td>
@@ -32,25 +35,35 @@ table, th, td {
 			<th>금액</th>
 			<th>삭제</th>
 		</tr>
+		
+		<c:choose>
+			<c:when test="${empty cart_list}">
+				<tr align="center">
+					<td colspan="6"><b>장바구니가 비었습니다.</b></td>
+				</tr>
+			</c:when>
+			<c:otherwise>
+				<c:forEach var="k" items="${cart_list}">
+					<tr align="center">
+						<td>--</td>
+						<td>${k.p_name}</td>
+						<td>정가:${k.p_price}<br>
+						<font color="red"> 세일가격: ${k.p_saleprice}</font>
+						</td>
+						<td>
+							${k.p_su}
+							<!-- 수량 조정 폼 --> <!------------------>
+						</td>
+						<td>${k.getTotalPrice()}</td>
+						<td><input type="button" value="삭제"
+							style="border: 1 solid black; cursor: pointer"
+							onclick="">
+						</td>
+					</tr>
+				</c:forEach>
+			</c:otherwise>
+		</c:choose>
 
-		<tr align="center">
-			<td></td>
-			<td></td>
-			<td>정가:<br> <font color="red"> 세일가격: </font>
-			</td>
-			<td>
-				<!-- 수량 조정 폼 --> <!------------------>
-			</td>
-			<td></td>
-			<td><input type="button" value="삭제"
-				style="border: 1 solid black; cursor: pointer"
-				onclick="javascript:location.href='delProduct.jsp?p_num='">
-			</td>
-		</tr>
-
-		<tr align="center">
-			<td colspan="6"><b>장바구니가 비었습니다.</b></td>
-		</tr>
 		<tr>
 			<td colspan="5" align="right">총 결재액 :</td>
 			<td></td>

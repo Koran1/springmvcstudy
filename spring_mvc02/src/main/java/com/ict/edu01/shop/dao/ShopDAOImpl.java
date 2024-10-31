@@ -1,6 +1,8 @@
 package com.ict.edu01.shop.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,22 +29,25 @@ public class ShopDAOImpl implements ShopDAO {
 
 	@Override
 	public List<CartVO> getCartList(String m_id) throws Exception {
-		return null;
+		return sqlSessionTemplate.selectList("shop.cartlist", m_id);
 	}
 
 	@Override
 	public CartVO getCartChk(String m_id, String p_num) {
-		return null;
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("m_id", m_id);
+		map.put("p_num", p_num);
+		return sqlSessionTemplate.selectOne("shop.cartchk", map);
 	}
 
 	@Override
 	public int getCartInsert(CartVO cartVO) throws Exception {
-		return 0;
+		return sqlSessionTemplate.insert("shop.cartinsert", cartVO);
 	}
 
 	@Override
 	public int getCartUpdate(CartVO cartVO) throws Exception {
-		return 0;
+		return sqlSessionTemplate.update("shop.cartupdate", cartVO);
 	}
 
 	@Override

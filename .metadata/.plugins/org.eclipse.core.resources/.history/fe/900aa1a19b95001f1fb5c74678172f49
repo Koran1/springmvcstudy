@@ -1,8 +1,0 @@
-package com.ict.edu01.shop.controller;
-
-import org.springframework.stereotype.Controller;
-
-@Controller
-public class ShopController {
-
-}

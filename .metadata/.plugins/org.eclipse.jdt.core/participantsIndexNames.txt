@@ -15,6 +15,8 @@ D:\springmvcstudy\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\82553306
 \spring_mvc02\src\main\java
 D:\springmvcstudy\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3090585424.index
 \spring_mvc01\src\main\java
+D:\springmvcstudy\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1900641313.index
+\spring_mvc02\src\main\java
 D:\springmvcstudy\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\742247839.index
 \test1\src\main\java
 D:\springmvcstudy\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1052596950.index
