@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="board">
+	<select id="count" resultType="int">
+		select count(*) from board
+	</select>
+	<select id="getlist" parameterType="Map" resultType="boardvo">
+		select * from board order by b_groups desc, b_lev asc limit #{limit} offset #{offset} 
+	</select>
+	<insert id="insert" parameterType="boardvo">
+		<selectKey keyProperty="b_groups" resultType="String" order="BEFORE">
+			select (IFNULL(MAX(idx), 0)+1) as b_groups from board
+		</selectKey>
+		insert into board (writer, title, content, pwd, hit, b_groups, b_step, b_lev, regdate, f_name)
+		values (#{writer}, #{title}, #{content}, #{pwd}, 0, #{b_groups}, 0, 0, now(), #{f_name})
+	</insert>
+	<update id="hitupdate" parameterType="String">
+		update board set hit = hit + 1 where idx = #{bo_idx}
+	</update>
+	<select id="detail" parameterType="String" resultType="boardvo">
+		select * from board where idx = #{bo_idx}
+	</select>
+	
+</mapper>

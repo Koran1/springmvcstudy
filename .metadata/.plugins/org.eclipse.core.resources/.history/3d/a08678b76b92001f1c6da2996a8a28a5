@@ -1,6 +1,0 @@
-package com.ict.edu01.sns.vo;
-
-public class NaverVO {
-	private String access_token, refresh_token, token_type, expires_in;
-	
-}

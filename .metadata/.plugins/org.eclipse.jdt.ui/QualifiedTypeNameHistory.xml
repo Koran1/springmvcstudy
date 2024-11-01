@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="com.ict.edu01.sns.vo.DaumAddrVO"/>
-    <fullyQualifiedTypeName name="org.springframework.scheduling.annotation.EnableScheduling"/>
-    <fullyQualifiedTypeName name="com.ict.edu01.guestbook.service.GuestbookService"/>
     <fullyQualifiedTypeName name="com.ict.edu01.guestbook.vo.GuestbookVO"/>
     <fullyQualifiedTypeName name="org.springframework.scheduling.annotation.Scheduled"/>
     <fullyQualifiedTypeName name="com.ict.edu01.bbs.dao.BBSDAO"/>
     <fullyQualifiedTypeName name="com.ict.edu01.bbs.service.BBSService"/>
     <fullyQualifiedTypeName name="org.springframework.security.crypto.password.PasswordEncoder"/>
-    <fullyQualifiedTypeName name="com.ict.edu01.common.Paging"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
     <fullyQualifiedTypeName name="java.net.URLEncoder"/>
     <fullyQualifiedTypeName name="com.ict.edu01.bbs.vo.CommentVO"/>
@@ -23,14 +19,8 @@
     <fullyQualifiedTypeName name="com.ict.edu01.shop.service.ShopService"/>
     <fullyQualifiedTypeName name="com.ict.edu01.shop.dao.ShopDAO"/>
     <fullyQualifiedTypeName name="org.springframework.ui.Model"/>
-    <fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
-    <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
-    <fullyQualifiedTypeName name="org.mybatis.spring.SqlSessionTemplate"/>
-    <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
     <fullyQualifiedTypeName name="com.ict.edu01.member.service.MemberDAO"/>
     <fullyQualifiedTypeName name="com.ict.edu01.member.dao.MemberService"/>
-    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
-    <fullyQualifiedTypeName name="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
     <fullyQualifiedTypeName name="java.lang.Exception"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ModelAttribute"/>
     <fullyQualifiedTypeName name="java.util.Map"/>
@@ -47,17 +37,27 @@
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
     <fullyQualifiedTypeName name="com.ict.edu01.sns.vo.RtInfos"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="com.ict.edu01.sns.vo.RouteInfoVO"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
     <fullyQualifiedTypeName name="java.lang.ProcessBuilder.Redirect"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
-    <fullyQualifiedTypeName name="org.springframework.web.servlet.ModelAndView"/>
     <fullyQualifiedTypeName name="com.ict.edu01.shop.vo.ShopVO"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
-    <fullyQualifiedTypeName name="org.springframework.web.multipart.MultipartFile"/>
     <fullyQualifiedTypeName name="java.util.UUID"/>
     <fullyQualifiedTypeName name="java.io.File"/>
     <fullyQualifiedTypeName name="com.ict.edu01.sns.vo.RouteInfoVO2"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
+    <fullyQualifiedTypeName name="org.mybatis.spring.SqlSessionTemplate"/>
+    <fullyQualifiedTypeName name="org.springframework.web.multipart.MultipartFile"/>
+    <fullyQualifiedTypeName name="com.ict.edu01.board.dao.BoardDAO"/>
+    <fullyQualifiedTypeName name="com.ict.edu01.board.service.BoardService"/>
+    <fullyQualifiedTypeName name="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="com.ict.edu01.common.Paging"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
+    <fullyQualifiedTypeName name="org.springframework.web.servlet.ModelAndView"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="com.ict.edu01.board.vo.BoardVO"/>
 </qualifiedTypeNameHistroy>

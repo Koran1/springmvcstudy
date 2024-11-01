@@ -188,7 +188,7 @@ public class ShopController {
 			String path = request.getSession().getServletContext().getRealPath("/resources/upload");
 			MultipartFile file_s = shopvo.getP_image_s_file();
 			MultipartFile file_l = shopvo.getP_image_l_file();
-
+			
 			UUID uuid = UUID.randomUUID();
 			String p_image_s = uuid.toString() + "_" + file_s.getOriginalFilename();
 			shopvo.setP_image_s(p_image_s);

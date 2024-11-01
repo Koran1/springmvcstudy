@@ -11,7 +11,7 @@
 	<h3><a href="/sns_login">SNS Login</a></h3>
 	<h3><a href="/guestbook2">Guestbook2</a></h3>
 	<h3><a href="/bbs">게시판 : bbs</a></h3>
-	<h3><a href="/board">게시판 : board</a></h3>
+	<h3><a href="/board_list">게시판 : board</a></h3>
 	<h3><a href="/findroad">road test</a></h3>
 	
 	<button onclick="shop_go()"><h3>shopping</h3></button>

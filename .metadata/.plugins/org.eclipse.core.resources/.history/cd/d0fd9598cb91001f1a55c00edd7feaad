@@ -1,7 +1,0 @@
-package com.ict.edu01.sns.vo;
-
-public class KakaoUserResponse {
-	private Long Id;
-	private Properties properties;
-	
-}

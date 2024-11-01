@@ -53,7 +53,7 @@ table, th, td {
 		</tr>
 		<tr>
 			<td colspan="2" align="center">
-			<img src="/resources/images/${shopvo.p_image_l}"></td>
+			<img src="resources/images/${shopvo.p_image_l}"></td>
 		</tr>
 		<tr>
 			<td colspan="2"></td>

@@ -18,6 +18,7 @@
 		<typeAlias type="com.ict.edu01.shop.vo.ShopVO" alias="shopvo" />
 		<typeAlias type="com.ict.edu01.shop.vo.CartVO" alias="cartvo" />
 		<typeAlias type="com.ict.edu01.member.vo.MemberVO" alias="memvo" />
+		<typeAlias type="com.ict.edu01.board.vo.BoardVO" alias="boardvo" />
 		
 	</typeAliases>
 	<mappers>
@@ -25,6 +26,7 @@
 		<mapper resource="mappers/bbs_mapper.xml" />
 		<mapper resource="mappers/comment_mapper.xml" />
 		<mapper resource="mappers/shop_mapper.xml" />
+		<mapper resource="mappers/board_mapper.xml" />
 		
 	</mappers>
 </configuration>

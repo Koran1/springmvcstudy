@@ -1,5 +1,0 @@
-package com.ict.edu01.sns.vo;
-
-public class Properties {
-	private String nickname, profile_image, thumbnail_imag;
-}
