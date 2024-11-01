@@ -11,8 +11,92 @@
 <body>
 	<h1>Map</h1>
 	<button onclick="getRoadLine()">경로 그리기</button>
+	<button onclick="addAnim()">경로 그리기</button>
 
 	<div id="map" style="width: 100%; height: 350px;"></div>
+
+	<div class="container">
+		<input type="checkbox">안녕하시오
+	</div>
+
+	<script>
+	document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+        cb.addEventListener('change', () => {
+            // Check if the checkbox is unchecked
+            if (!cb.checked) {
+                alert('Checkbox is unchecked!');
+            }
+        });
+    });
+	
+	let arr = ['a', 'b', 'b', 'c'];
+
+	arr = arr.filter((element) => element !== 'b');
+
+	document.writeln(arr); // ['a', 'b', 'b', 'c']
+	
+	function addAnim() {
+		const travelPlan = document.createElement('button');
+        travelPlan.classList.add('draggable');
+        travelPlan.setAttribute('draggable', "true");
+        travelPlan.innerHTML ='🦊';
+        document.querySelector('.container').insertBefore(travelPlan, null);
+    	
+        test1();
+	}
+	
+	function test1(){
+		
+
+const draggables = document.querySelectorAll(".draggable");
+const containers = document.querySelectorAll(".container");
+
+draggables.forEach(draggable => {
+  draggable.addEventListener("dragstart", () => {
+    draggable.classList.add("dragging");
+  });
+
+  draggable.addEventListener("dragend", () => {
+    draggable.classList.remove("dragging");
+  });
+});
+
+containers.forEach(container => {
+  container.addEventListener("dragover", e => {
+    e.preventDefault();
+    const afterElement = getDragAfterElement(container, e.clientX);
+    const draggable = document.querySelector(".dragging");
+    if (afterElement === undefined) {
+      container.appendChild(draggable);
+    } else {
+      container.insertBefore(draggable, afterElement);
+    }
+  });
+});
+
+function getDragAfterElement(container, x) {
+  const draggableElements = [
+    ...container.querySelectorAll(".draggable:not(.dragging)"),
+  ];
+
+  return draggableElements.reduce(
+    (closest, child) => {
+      const box = child.getBoundingClientRect();
+      const offset = x - box.left - box.width / 2;
+      // console.log(offset);
+      if (offset < 0 && offset > closest.offset) {
+        return { offset: offset, element: child };
+      } else {
+        return closest;
+      }
+    },
+    { offset: Number.NEGATIVE_INFINITY },
+  ).element;
+}
+	}
+	test1();
+</script>
+
 
 	<script type="text/javascript"
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3ab528374e287b067bf7ce3808786127"></script>
