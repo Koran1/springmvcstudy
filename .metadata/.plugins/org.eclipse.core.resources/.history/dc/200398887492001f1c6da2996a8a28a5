@@ -1,7 +1,0 @@
-package com.ict.edu01.sns.vo;
-
-public class NaverUserResponse {
-	private String resultcode, message;
-	private Response response;
-	
-}

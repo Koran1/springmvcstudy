@@ -6,6 +6,10 @@
 <meta charset="UTF-8">
 <title>Board - write</title>
 <style type="text/css">
+table{
+	width: 800px;
+	margin: 0px auto;
+}
 tr {
 	    text-align:center;
 	    padding:4px 10px;
@@ -23,7 +27,8 @@ th {
 <body>
 	
 	<form action="/board_write_ok" method="post" enctype="multipart/form-data">
-		<table width="700px">
+		<table summary="게시판 글 쓰기">
+			<caption><h2>Board 게시판 글 쓰기</h2></caption>
 		<tbody>
 			<tr>
 				<th>작성자</th>
@@ -48,8 +53,10 @@ th {
 			</tr>
 			<tr>
 				<td colspan="2">
-				<input type="button" value="입력" onclick="board_write_ok(this.form)" /> 
-				<input type="reset" value="취소" />
+					<input type="hidden" value="${cPage}" name="cPage">
+					<input type="button" value="입력" onclick="board_write_ok(this.form)" /> 
+					<input type="reset" value="취소" />
+					<input type="button" value="목록" onclick="board_list_go(this.form)" /> 
 				</td>
 			</tr>
             </tbody>
@@ -65,6 +72,10 @@ th {
 				return;
 			}
 		}
+		f.submit();
+	}
+	function board_list_go(f) {
+		f.action="/board_list?cPage=${cPage}";
 		f.submit();
 	}
 </script>

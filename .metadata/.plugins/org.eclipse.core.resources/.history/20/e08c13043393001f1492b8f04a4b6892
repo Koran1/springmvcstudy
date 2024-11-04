@@ -1,5 +1,0 @@
-package com.ict.edu01.bbs.vo;
-
-public class CommentVO {
-	private String c_idx, writer, content, write_date, b_idx;
-}

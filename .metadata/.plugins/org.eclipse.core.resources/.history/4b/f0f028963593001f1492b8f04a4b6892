@@ -1,6 +1,0 @@
-package com.ict.edu01.bbs.service;
-
-@Service
-public class BBSServiceImpl implements BBSService{
-
-}

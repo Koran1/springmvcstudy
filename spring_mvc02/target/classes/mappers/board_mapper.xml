@@ -23,4 +23,26 @@
 		select * from board where idx = #{bo_idx}
 	</select>
 	
+	<!-- 같은 b_groups 를 찾아서 기존 lev 가 들어온 lev 보다 크거나 같으면 기존 lev들을 증가시키자 (최신순으로) -->
+	<!-- < , > 를 사용하면 오류 가능성 => < ![CDATA[~~~]] >사용 (Character DATA)
+		또는 &lt; = < , &gt; = > , &gt;= = >= 
+	--> 
+	<update id="ans_levupdate" parameterType="map">
+		update board set b_lev = b_lev + 1 
+		<![CDATA[
+		where b_groups=#{b_groups} and b_lev >= #{b_lev}
+		]]>
+	</update>
+	<insert id="ans_insert" parameterType="boardvo" >
+		insert into board (writer, title, content, pwd, hit, b_groups, b_step, b_lev, regdate, f_name)
+		values (#{writer}, #{title}, #{content}, #{pwd}, 0, #{b_groups}, #{b_step}, #{b_lev}, now(), #{f_name})
+	</insert>
+	<update id="delete" parameterType="String">
+		update board set active = 1 where idx = #{idx}
+	</update>
+	
+	<update id="update" parameterType="boardvo">
+		update board set writer = #{writer}, title = #{title}, content = #{content}, f_name = #{f_name} 
+		where idx = #{idx}
+	</update>
 </mapper>

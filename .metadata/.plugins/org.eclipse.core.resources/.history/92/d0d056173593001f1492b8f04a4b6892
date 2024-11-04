@@ -1,5 +1,0 @@
-package com.ict.edu01.bbs.service;
-
-public interface BBSService {
-
-}

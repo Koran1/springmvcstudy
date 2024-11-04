@@ -1,5 +1,0 @@
-package com.ict.edu01.bbs.dao;
-
-public class BBSDAOImpl implements BBSDAO{
-
-}

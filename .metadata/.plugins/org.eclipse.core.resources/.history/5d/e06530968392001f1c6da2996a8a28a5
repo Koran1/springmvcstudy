@@ -1,6 +1,0 @@
-package com.ict.edu01.sns.vo;
-
-public class DaumAddrVO {
-	private String postcode, address, detailAdrress, extraAddress;
-	
-}

@@ -13,6 +13,6 @@ public interface BoardDAO {
     public BoardVO getBoardDetail(String bo_idx);
     public int getLevUpdate(Map<String, Integer> map);
     public int getAnsInsert(BoardVO bovo);
-    public int getBoardDelete(BoardVO bovo);
+    public int getBoardDelete(String idx);
     public int getBoardUpdate(BoardVO bovo);
 }

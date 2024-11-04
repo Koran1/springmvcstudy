@@ -46,26 +46,22 @@ public class BoardDAOImpl implements BoardDAO{
 
 	@Override
 	public int getLevUpdate(Map<String, Integer> map) {
-		// TODO Auto-generated method stub
-		return 0;
+		return sqlSessionTemplate.update("board.ans_levupdate", map);
 	}
 
 	@Override
 	public int getAnsInsert(BoardVO bovo) {
-		// TODO Auto-generated method stub
-		return 0;
+		return sqlSessionTemplate.insert("board.ans_insert", bovo);
 	}
 
 	@Override
-	public int getBoardDelete(BoardVO bovo) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int getBoardDelete(String idx) {
+		return sqlSessionTemplate.update("board.delete", idx);
 	}
 
 	@Override
 	public int getBoardUpdate(BoardVO bovo) {
-		// TODO Auto-generated method stub
-		return 0;
+		return sqlSessionTemplate.update("board.update", bovo);
 	}
 	
 }
