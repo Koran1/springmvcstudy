@@ -64,7 +64,7 @@
 							<td>첨부파일 없음</td>
 						</c:when>
 						<c:otherwise>
-							<td><a href="/bbs_down?f_name=${bvo.f_name}">
+							<td><a href="/board_down?f_name=${bvo.f_name}">
 							<img src="resources/upload/${bvo.f_name}" style="width: 80px;"><br>
 							${bvo.f_name}</a></td>
 						</c:otherwise>

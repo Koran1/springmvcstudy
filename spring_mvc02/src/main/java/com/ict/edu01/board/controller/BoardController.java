@@ -1,17 +1,23 @@
 package com.ict.edu01.board.controller;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.OutputStream;
+import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -138,6 +144,29 @@ public class BoardController {
 			return mv;
 		}else {
 			return null;
+		}
+		
+	}
+	
+	@GetMapping("/board_down")
+	public void boardDown(HttpServletRequest request, HttpServletResponse response) {
+		try {
+			String f_name = request.getParameter("f_name");
+			String path = request.getSession().getServletContext().getRealPath("/resources/upload/"+f_name);
+			String r_path = URLEncoder.encode(path, "UTF-8");
+			
+			response.setContentType("application/x-msdownload");
+			response.setHeader("Content-Disposition", "attachment; filename="+r_path);
+			
+			File file = new File(new String(path.getBytes(), "utf-8"));
+			FileInputStream in = new FileInputStream(file);
+			
+			OutputStream out = response.getOutputStream();
+			
+			FileCopyUtils.copy(in, out);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 		
 	}
