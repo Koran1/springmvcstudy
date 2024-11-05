@@ -1,6 +1,0 @@
-package com.ict.edu01.shop.vo;
-
-public class CartVO {
-	private String cart_idx, p_num, p_name, p_price, p_saleprice, p_su, p_id;
-	
-}

@@ -1,5 +1,0 @@
-package com.ict.edu01.shop.service;
-
-public class ShopServiceImpl implements ShopService{
-
-}

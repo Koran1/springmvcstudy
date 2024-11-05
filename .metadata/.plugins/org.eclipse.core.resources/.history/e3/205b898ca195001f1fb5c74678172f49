@@ -1,5 +1,0 @@
-package com.ict.edu01.shop.dao;
-
-public class ShopDAOImpl implements ShopDAO {
-
-}
